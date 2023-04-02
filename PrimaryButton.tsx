@@ -10,12 +10,11 @@ interface PrimaryButtonProps {
 class PrimaryButton extends Button {
 
     render() {
-        console.log("hello");
         return (
             <View style={[styles.buttonContainer, styles.buttonPrimary]}>
                 <Pressable
-                    style={[styles.button, { backgroundColor: "blue" }]}
-                    onPress={() => alert('You pressed a button PRIMARY.')}
+                    style={[styles.button, { backgroundColor: "green" }]}
+                    onPress={this.props.onPress}
                 >
                     <FontAwesome
                         name="picture-o"
@@ -23,7 +22,7 @@ class PrimaryButton extends Button {
                         color="#25292e"
                         style={styles.buttonIcon}
                     />
-                    <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{this.props.label}</Text>
+                    <Text style={[styles.buttonLabel, { color: "white" }]}>{this.props.label}</Text>
                 </Pressable>
             </View>
         )

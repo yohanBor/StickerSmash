@@ -3,6 +3,7 @@ import { StyleSheet, View, Pressable, Text } from 'react-native';
 
 interface ButtonProps {
     label: string;
+    onPress?: () => void;
 }
 
 /**
@@ -15,9 +16,8 @@ class Button extends Component<ButtonProps>{
         const label = this.props.label;
         return (
             <View style={styles.buttonContainer}>
-                <Pressable style={styles.button} onPress={() => alert('You pressffdsdseesed a button.')}>
+                <Pressable style={styles.button} onPress={this.props.onPress}>
                     <Text style={styles.buttonLabel}>{label}</Text>
-
                 </Pressable>
             </View>
         );
